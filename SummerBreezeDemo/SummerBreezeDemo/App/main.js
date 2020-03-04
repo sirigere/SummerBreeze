@@ -1,6 +1,10 @@
 ﻿require.config({
     paths: { "text": "durandal/amd/text" }
 });
+define('jquery', function () { return jQuery; });
+define('ko', ko);
+define('breeze', breeze);
+define('summerbreeze', summerBreeze);
 
 define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plugins/router', 'services/logger'],
     function (app, viewLocator, system, router, logger) {
@@ -8,8 +12,6 @@ define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plu
    
     // Enable debug message to show in the console 
     system.debug(true);
-
-    defineRootModules();
 
     app.start().then(function () {
         toastr.options.positionClass = 'toast-bottom-right';
@@ -32,14 +34,5 @@ define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plu
       
         
     });
-
-    var root = this;
-
-    function defineRootModules() {
-        define('jquery', [], function () { return root.jQuery; });
-        define('ko', [], function () { return root.ko; });
-        define('breeze', [], function () { return root.breeze; });
-        define('summerbreeze', [], function () { return root.summerBreeze; });
-    }
    
 });

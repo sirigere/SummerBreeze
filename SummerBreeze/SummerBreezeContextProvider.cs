@@ -1,4 +1,3 @@
-using Breeze.WebApi;
 using SummerBreeze;
 using Newtonsoft.Json;
 using Ninject;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-
+using Breeze.ContextProvider;
 
 namespace SummerBreeze
 
@@ -130,12 +129,7 @@ namespace SummerBreeze
                          isScalar = (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames != null && (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames.Count() > 0,
                          associationName = (nav as BreezeNavigationPropertyAttribute).Association,
                          foreignKeyNames = (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames
-                       
-
                      });
-
-                  
-
                 }
                 else
                 {
@@ -150,8 +144,6 @@ namespace SummerBreeze
                         validators = GetValidatorsForProperty(i)
 
                     });
-
-                  
                 }
                 
                 //if (i.GetGetMethod().IsVirtual)

@@ -1,4 +1,4 @@
-﻿using Breeze.WebApi;
+﻿using Breeze.ContextProvider;
 using System;
 using System.Collections.Generic;
 using System.Linq;

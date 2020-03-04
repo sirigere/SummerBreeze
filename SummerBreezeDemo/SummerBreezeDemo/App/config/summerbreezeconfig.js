@@ -13,7 +13,7 @@
             if (generator) {
                 return generator;
             } else {
-                generator = new summerbreeze.generator({ service: serviceName })
+                generator = new summerbreeze.generator({ service: serviceName });
                 return generator;
             }
         }

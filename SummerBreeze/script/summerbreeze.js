@@ -61,7 +61,7 @@ window.summerBreeze = (function ($, breeze) {
 
                 getMetadata(metadataUri)
                     .then(function (metadata) {
-                        addEntitiesToStore(JSON.parse(metadata), store);
+                        addEntitiesToStore(metadata, store);
                         def.resolve();
                     });
             }).promise();

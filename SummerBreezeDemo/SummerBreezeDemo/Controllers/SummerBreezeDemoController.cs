@@ -1,4 +1,6 @@
-﻿using Breeze.WebApi;
+﻿using Breeze.ContextProvider;
+using Breeze.ContextProvider.EF6;
+using Breeze.WebApi2;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SummerBreeze;
@@ -13,7 +15,8 @@ using System.Web.Http;
 
 namespace SummerBreezeDemo.Controllers
 {
-    [BreezeJsonFormatter, ODataActionFilter]
+
+    [BreezeJsonFormatter]
     public class SummerBreezeDemoController : ApiController
     {
         //Our 2 ContextProviders: The EFContextProvider for direct DB access and SummerBreezeContextProvider for DTO´s

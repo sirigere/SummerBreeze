@@ -4,7 +4,7 @@
         var
             serviceName = 'breeze/summerbreezedemo', // requires a summerbreezedemo controller
             entityModel = breeze.entityModel,
-            store = new entityModel.MetadataStore(),
+            store = new breeze.MetadataStore(),
             entityQuery = breeze.EntityQuery;
 
         //entityModel.NamingConvention.camelCase.setAsDefault();
@@ -16,7 +16,7 @@
 
        
         function createManager() {
-            return new entityModel.EntityManager({
+            return new breeze.EntityManager({
                 serviceName: serviceName, 
                 metadataStore: store
             });
